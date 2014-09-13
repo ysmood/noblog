@@ -1,0 +1,24 @@
+{
+  "name": "noblog",
+  "version": "0.0.1",
+  "authors": [
+    "http://ysmood.org"
+  ],
+  "description": "A simple personal blog.",
+  "main": "app.coffee",
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ysmood/noblog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1"
+  }
+}

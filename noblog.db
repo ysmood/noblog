@@ -1,8 +1,9 @@
-var jdb = { doc: {"posts":[{"body":"asdlfkj"}]}, send: function() {}, save: function() {}, rollback: function() {} };
-(function (jdb) {
-        var _base;
-        if ((_base = jdb.doc).posts == null) {
-          _base.posts = [];
-        }
-        return jdb.save();
-      })(jdb, undefined);
+var jdb = { doc: {"posts":{"0":"b","1":"c","2":"d"},"posts_id_ptr":0}, send: function() {}, save: function() {}, rollback: function() {} };
+(function (jdb, mod_name) {
+      var _base;
+      if ((_base = jdb.doc)[mod_name] == null) {
+        _base[mod_name] = {};
+      }
+      jdb.doc[mod_name + '_id_ptr'] = 0;
+      return jdb.save();
+    })(jdb, "posts");

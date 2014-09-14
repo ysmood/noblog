@@ -4,22 +4,20 @@
 	db
 	renderer
 	conf
-	post
+	posts
 } = require './lib'
 
 init = ->
-	init_db()
-	init_main()
-	init_service()
-	init_assets()
-	start()
+	init_db().then ->
+		init_main()
+		init_service()
+	.then ->
+		init_assets()
+		start()
+	.done()
 
 init_db = ->
 	db.loaded.then ->
-		db.exec (jdb) ->
-			jdb.doc.posts ?= []
-			jdb.save()
-	.done ->
 		kit.log 'DB loaded.'.green
 
 init_main = ->
@@ -29,7 +27,7 @@ init_main = ->
 			res.send tpl({ conf })
 
 init_service = ->
-	post()
+	posts()
 
 init_assets = ->
 	service.use renderer.static('client')

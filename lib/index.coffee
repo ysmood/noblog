@@ -7,7 +7,7 @@ module.exports = _.defaults {
 
 	nobone
 
-	post: require './post'
+	posts: require './posts'
 
 }, nobone({
 	service: {}

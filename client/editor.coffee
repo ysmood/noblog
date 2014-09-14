@@ -25,7 +25,7 @@ define [
 			data = {
 				body: ego.$editor.val()
 			}
-			$.post '/post/add', JSON.stringify(data)
+			$.post '/posts/add', JSON.stringify(data)
 
 			hide()
 

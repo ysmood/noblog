@@ -81,7 +81,7 @@ self.create_list = (mod_name) ->
 
 	db.exec mod_name, (jdb, mod_name) ->
 		jdb.doc[mod_name] ?= {}
-		jdb.doc[mod_name + '_id_ptr'] = 0
+		jdb.doc[mod_name + '_id_ptr'] ?= 0
 		jdb.save()
 	.then ->
 		init_service_add()

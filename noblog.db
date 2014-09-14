@@ -1,0 +1,8 @@
+var jdb = { doc: {"posts":[{"body":"asdlfkj"}]}, send: function() {}, save: function() {}, rollback: function() {} };
+(function (jdb) {
+        var _base;
+        if ((_base = jdb.doc).posts == null) {
+          _base.posts = [];
+        }
+        return jdb.save();
+      })(jdb, undefined);

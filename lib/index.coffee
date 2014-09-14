@@ -7,4 +7,12 @@ module.exports = _.defaults {
 
 	nobone
 
-}, nobone()
+	post: require './post'
+
+}, nobone({
+	service: {}
+	db: {
+		db_path: 'noblog.db'
+	}
+	renderer: {}
+})

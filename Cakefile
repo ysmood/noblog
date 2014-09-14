@@ -1,4 +1,3 @@
-require 'coffee-script/register'
 Q = require 'q'
 nobone = require 'nobone'
 { kit } = nobone
@@ -6,6 +5,7 @@ nobone = require 'nobone'
 task 'dev', 'dev server', ->
 	kit.monitor_app {
 		bin: 'coffee'
+		watch_list: ['app.coffee', 'lib/*.coffee']
 		args: ['app.coffee']
 	}
 

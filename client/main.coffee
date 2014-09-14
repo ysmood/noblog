@@ -1,10 +1,19 @@
-class Noblog then constructor: ->
-	self = @
+require.config {
+	paths: {
+		'css': '/assets/require-css/css.min'
 
-	init = ->
-		document.querySelector 'h1'
-		.classList.add 'noblog'
+		'jquery': '/assets/jquery/dist/jquery.min'
+		'editor': '/editor'
+	}
+}
 
-	init()
+require [
+	# Styles
+	'css!/style/default.css'
 
-noblog = new Noblog
+	'jquery'
+], (nil, $) ->
+	$new_post = $ '.new_post'
+	$new_post.click ->
+		require ['editor'], (editor) ->
+			editor.init()

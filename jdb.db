@@ -1,0 +1,1 @@
+var jdb = { doc: {}, send: function() {}, save: function() {}, rollback: function() {} };
